@@ -38,10 +38,10 @@ function Home() {
   const [moviesData, setMoviesData] = useState([]);
   useEffect(() => {
     fetch("https://mymoviz-backend-one-tau.vercel.app/movies")
-    .then(response=>response.json())
-    .then(data=>{
-      setMoviesData(data.findMovies.results);
-    })
+      .then((response) => response.json())
+      .then((data) => {
+        setMoviesData(data.movies.results);
+      });
   }, []);
 
   const movies = moviesData.map((data, i) => {
